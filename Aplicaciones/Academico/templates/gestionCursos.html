@@ -40,6 +40,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
+                    <th>#</th>
                     <th>Código</th>
                     <th>Nombre</th>
                     <th>Créditos</th>
@@ -49,6 +50,7 @@
                 <tbody>
                 {% for c in cursos %}
                 <tr>
+                    <td>{{forloop.counter}}</td>
                     <td>{{c.codigo}}</td>
                     <td>{{c.nombre}}</td>
                     <td>{{c.creditos}}</td>
