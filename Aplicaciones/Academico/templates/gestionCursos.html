@@ -1,22 +1,53 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-</head>
-<body>
+{% extends "./base.html"%}
+{% block title %} Gestion de cursos {% endblock %}
 
-<h1>Ya estamos en la pagina "Gestion de Cursos"</h1>
-<ul>
-    {% for c in cursos %}
-    <li>{{c.nombre}}</li>
+{% block body%}
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <h2>Gestión de cursos</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <input type="text">
 
-    {% endfor %}
-</ul>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-</body>
-</html>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <h1>Listado de cursos</h1>
+        <div class="table-responsive py-2">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Créditos</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for c in cursos %}
+                <tr>
+                    <td>{{c.codigo}}</td>
+                    <td>{{c.nombre}}</td>
+                    <td>{{c.creditos}}</td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+</div>
+{% endblock %}
